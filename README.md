@@ -25,3 +25,9 @@ VCC ---> 5V
 DIO ---> D2
 
 CLK ---> D3
+
+Buzzer
+
++ve ---> D8
+
+-ve ---> GND

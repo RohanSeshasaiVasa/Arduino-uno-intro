@@ -1,0 +1,49 @@
+#include <LedControl.h>
+
+// DIN, CLK, CS, number of devices = 2
+LedControl lc = LedControl(11, 13, 10, 2);
+
+// ---------- MALE SYMBOL ----------
+byte maleSymbol[8] = {
+  B00011000,
+  B00111100,
+  B00011000,
+  B01111110,
+  B00011000,
+  B00100100,
+  B01000010,
+  B00000000
+};
+
+// ---------- FEMALE SYMBOL ----------
+byte femaleSymbol[8] = {
+  B00011000,
+  B00111100,
+  B00011000,
+  B00111100,
+  B01011010,
+  B00011000,
+  B00100100,
+  B00000000
+};
+
+
+void setup() {
+  for (int i = 0; i < 2; i++) {
+    lc.shutdown(i, false);   // Wake up both displays
+    lc.setIntensity(i, 8);   // Brightness
+    lc.clearDisplay(i);
+  }
+}
+
+void loop() {
+  // Display Male on module 0
+  for (int row = 0; row < 8; row++) {
+    lc.setRow(0, row, maleSymbol[row]);
+  }
+
+  // Display Female on module 1
+  for (int row = 0; row < 8; row++) {
+    lc.setRow(1, row, femaleSymbol[row]);
+  }
+}

@@ -31,3 +31,9 @@ Buzzer
 +ve ---> D8
 
 -ve ---> GND
+
+Buttons
+
+one side ---> D4
+
+other side ---> GND

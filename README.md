@@ -15,3 +15,13 @@ DIN ---> D11
 CS ---> D10
 
 CLK ---> D13
+
+Arduino with TM1637
+
+GND ---> GND
+
+VCC ---> 5V
+
+DIO ---> D2
+
+CLK ---> D3
